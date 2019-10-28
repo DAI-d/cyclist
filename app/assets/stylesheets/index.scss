@@ -1,0 +1,39 @@
+.main{
+  background:skyblue;
+  height:1500px;
+}
+.main-area{
+  width:80%;
+  padding:50px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.route-data-box{
+  background: #ffffff;
+  width:200px;
+  margin-bottom:20px;
+}
+.route-data-box-lower{
+  display:flex;
+  justify-content: space-around;
+}
+
+.route-image{
+  height:150px;
+  &:hover{
+    background:url('cycling.gif');
+    background-size: contain;
+    .index-image{
+      display:none;
+    }
+  }
+}
+.index-image{
+  border: 1px solid #ddd;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+}
