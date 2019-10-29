@@ -1,6 +1,6 @@
 .main{
-  background:skyblue;
-  height:1500px;
+  background: #eeeeee;
+  // height:1000px;
 }
 .main-area{
   width:80%;
@@ -36,4 +36,29 @@
   margin: 0 auto;
   overflow: hidden;
   cursor: pointer;
+}
+
+body::after { //ロード画面のCSS。bodyの擬似要素として追加。js発火前は非表示にしておく。
+  content: 'ロード中...';
+  font-size:50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background-color: skyblue;  /* 背景カラー */
+  background: url('sV0jltkV.jpg');  /* 背景カラー */
+  z-index: 9999;  /* 一番手前に */
+  pointer-events: none;  /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
+  opacity:0;  /* 初期値 : 透過状態 */
+  transition: opacity 1s ease; /*消えるまでの時間、消え方*/
+}
+
+body.fadeout::after { //jsでbodyにfadeoutクラスが付与されたら表示する
+  opacity: 1;
+}
+
+.map-area{
+  background:skyblue;
+  height:500px;
 }

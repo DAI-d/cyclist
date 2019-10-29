@@ -1,0 +1,11 @@
+.user-edit-header
+  ユーザーエディット画面
+.user-edit-main
+  = form_for (current_user) do |f|
+    .edit-nickname
+      ニックネーム
+      = f.text_field :nickname, placeholder: "ニックネーム", maxlength: "10", size: "20", class: "nickname", value: current_user.nickname
+    .profile__lower__button
+      = f.submit "変更する", class:"button"
+  .toppage-button
+  = link_to "トップページへ", root_path

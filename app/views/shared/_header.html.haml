@@ -3,17 +3,19 @@
     Cyclist Holy Land
   .header-lower
     .header-lower-box
-      = link_to '', class: 'btn' do
-        .header-lower-menu
-          .header-lower-text
-            マイページ
-          %i.fas.fa-biking.fa-3x
+      - if user_signed_in?
+        = link_to user_path(current_user), class: 'btn-mypage' do
+          .header-lower-menu
+            .header-lower-text
+              マイページ
+            %i.fas.fa-biking.fa-3x
     .header-lower-box
-      = link_to '', class: 'btn' do
-        .header-lower-menu
-          .header-lower-text
-            投稿する
-          %i.fas.fa-biking.fa-3x
+      - if user_signed_in?
+        = link_to '', class: 'btn' do
+          .header-lower-menu
+            .header-lower-text
+              投稿する
+            %i.fas.fa-biking.fa-3x
     .header-lower-box
       - unless user_signed_in?
         = link_to new_user_session_path do
@@ -27,8 +29,3 @@
             .header-lower-text
               ログアウト
             %i.fas.fa-biking.fa-3x
-
-    -# = link_to users_path ,class: 'side-bar-link' do
-    -#   .side-bar-box
-    -#     %li.side-bar--upper__menu マイページ
-    -#     = fa_icon('chevron-right')

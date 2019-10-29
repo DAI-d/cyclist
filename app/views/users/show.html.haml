@@ -1,0 +1,7 @@
+.mypage-header
+  マイページ
+.mypage-main
+  = "ユーザー名：#{current_user.nickname}"
+  = link_to "ユーザー情報の編集", edit_user_path
+.toppage-button
+  = link_to "トップページへ", root_path
