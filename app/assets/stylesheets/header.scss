@@ -4,6 +4,7 @@
   background:url('ET.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 .header-upper{
   height:300px;
@@ -11,9 +12,6 @@
   text-align: center;
   padding:20px 0 0;
   font-size:40px;
-  &:hover{
-  animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  }
 }
 .header-lower{
   // background:hsl(167, 93%, 71%);

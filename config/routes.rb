@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'contents/pref4'
   get 'contents/pref5'
   resources :users, only: [:edit, :update, :index, :show]
+  resources :contents, only: [:index, :new, :create, :show]
 end
