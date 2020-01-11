@@ -63,3 +63,21 @@ body.fadeout::after { //jsでbodyにfadeoutクラスが付与されたら表示�
   height:1000px;
   padding-top:100px;
 }
+
+.slick-area{
+  margin:0 auto;
+  width:200px;
+  height:200px;
+  .image-a{
+    background:red;
+    height:200px;  
+  }
+  .image-b{
+    background:yellow;
+    height:200px;  
+  }
+  .image-c{
+    background:blue;
+    height:200px;  
+  }
+}

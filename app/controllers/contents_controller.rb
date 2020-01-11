@@ -2,6 +2,7 @@ class ContentsController < ApplicationController
 
 def index
   @contents = Content.all
+  @random = Content.order("RAND()").limit(1)
 end
 
 def new
