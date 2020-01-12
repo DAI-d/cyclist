@@ -27,6 +27,7 @@
     .image-c
   .random-image-area
     - @random.each do |content|
-      .landscape-image{style: "background-image: url(#{content.route_image})"}
+      = link_to content_path(content), class: "content-link2" do
+        .landscape-image{style: "background-image: url(#{content.landscape_image})"}
   .map-area
     #map

@@ -26,9 +26,13 @@ end
 # end
 
 Content.create([
-  {title: '琵琶湖', prefecture_id: 25, route_url: 'a', distance: 140, max_elevation: 20, total_elevation:30, image:File.open("./public/images/琵琶湖.png")},
-  {title: '淡路島', prefecture_id: 28, route_url: 'a', distance: 150, max_elevation: 20, total_elevation:30, image:File.open("./public/images/淡路島.png")},
-  {title: 'しまなみ海道', prefecture_id: 34, route_url: 'a', distance: 130, max_elevation: 20, total_elevation:30, image:File.open("./public/images/しまなみ街道.png")},
-  {title: '諏訪湖', prefecture_id: 20, route_url: 'a', distance: 20, max_elevation: 20, total_elevation:30, image:File.open("./public/images/諏訪湖.png")},
-  {title: '霞ヶ浦', prefecture_id: 8, route_url: 'a', distance: 120, max_elevation: 20, total_elevation:30, image:File.open("./public/images/霞ヶ浦.png")}
+  {title: '琵琶湖', prefecture_id: 25, route_url: 'a', distance: 140, max_elevation: 20, total_elevation:30, route_image:File.open("./public/images/琵琶湖.png"), landscape_image:File.open("./public/images/風景1.jpg")},
+  {title: '淡路島', prefecture_id: 28, route_url: 'a', distance: 150, max_elevation: 20, total_elevation:30, route_image:File.open("./public/images/淡路島.png"), landscape_image:File.open("./public/images/風景2.jpg")},
+  {title: 'しまなみ海道', prefecture_id: 34, route_url: 'a', distance: 130, max_elevation: 20, total_elevation:30, route_image:File.open("./public/images/しまなみ街道.png"), landscape_image:File.open("./public/images/風景3.jpg")},
+  {title: '諏訪湖', prefecture_id: 20, route_url: 'a', distance: 20, max_elevation: 20, total_elevation:30, route_image:File.open("./public/images/諏訪湖.png"), landscape_image:File.open("./public/images/風景4.jpg")},
+  {title: '霞ヶ浦', prefecture_id: 8, route_url: 'a', distance: 120, max_elevation: 20, total_elevation:30, route_image:File.open("./public/images/霞ヶ浦.png"), landscape_image:File.open("./public/images/風景5.jpg")}
+])
+
+User.create([
+  {nickname: 'a', email: 'a@a', password:'1111111'}
 ])
