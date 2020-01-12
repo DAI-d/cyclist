@@ -23,16 +23,10 @@
             %i.far.fa-comment
   .slick-area
     .image-a
-      - @random.each do |random|
-        .route-image{style: "background-image: url(#{random.image})"}
     .image-b
-      - @random.each do |random|
-        .route-image{style: "background-image: url(#{random.image})"}
     .image-c
-      - @random.each do |random|
-        .route-image{style: "background-image: url(#{random.image})"}
-  .slick-area
-  - @random.each do |content|
-    .route-image{style: "background-image: url(#{content.image})"}
+  .random-image-area
+    - @random.each do |content|
+      .landscape-image{style: "background-image: url(#{content.image})"}
   .map-area
     #map

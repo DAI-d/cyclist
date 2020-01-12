@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
 
 def index
   @contents = Content.all
-  @random = Content.order("RAND()").limit(1)
+  @random = Content.order("RAND()").limit(4)
 end
 
 def new
@@ -25,7 +25,7 @@ end
 private
 
   def content_params
-    params.require(:content).permit(:title, :prefecture_id, :image, :route_url, :distance, :max_elevation, :total_elevation)
+    params.require(:content).permit(:title, :prefecture_id, :route_image, :route_url, :distance, :max_elevation, :total_elevation)
   end
 
 end

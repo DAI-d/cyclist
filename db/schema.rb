@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_14_073002) do
+ActiveRecord::Schema.define(version: 2020_01_12_144712) do
 
   create_table "contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.bigint "prefecture_id", null: false
-    t.text "image"
+    t.text "route_image"
     t.text "route_url", null: false
     t.integer "distance", null: false
     t.integer "max_elevation", null: false

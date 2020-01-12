@@ -81,3 +81,15 @@ body.fadeout::after { //jsでbodyにfadeoutクラスが付与されたら表示�
     height:200px;  
   }
 }
+
+.random-image-area{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  // width:100%;
+}
+
+.landscape-image{
+  width:50%;
+  height:300px;
+}
