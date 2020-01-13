@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2019_11_14_073002) do
   create_table "contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.bigint "prefecture_id", null: false
+    t.bigint "user_id", null: false
     t.text "landscape_image"
     t.text "route_image"
     t.text "route_url", null: false
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_11_14_073002) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["prefecture_id"], name: "index_contents_on_prefecture_id"
+    t.index ["user_id"], name: "index_contents_on_user_id"
   end
 
   create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

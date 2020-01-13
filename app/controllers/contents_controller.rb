@@ -25,7 +25,7 @@ end
 private
 
   def content_params
-    params.require(:content).permit(:title, :prefecture_id, :route_image, :landscape_image, :route_url, :distance, :max_elevation, :total_elevation)
+    params.require(:content).permit(:title, :prefecture_id, :route_image, :landscape_image, :route_url, :distance, :max_elevation, :total_elevation).merge(user_id: current_user.id)
   end
 
 end
