@@ -2,8 +2,10 @@ $(function() {
   $('.slick-area').slick({
     dots: true,
     infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear'
+    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    // fade: true,
+    // cssEase: 'linear'
   });
 });

@@ -23,11 +23,15 @@
             %i.far.fa-comment
   .slick-area
     - @contents.each do |content|
-      .image-a
-        .landscape-image{style: "background-image: url(#{content.landscape_image})"}
+      = link_to content_path(content), class: "content-link2" do
+        .image-a
+          .landscape-image{style: "background-image: url(#{content.landscape_image})"}
   .random-image-area
     - @random.each do |content|
       = link_to content_path(content), class: "content-link2" do
         .landscape-image{style: "background-image: url(#{content.landscape_image})"}
   .map-area
     #map
+= link_to new_content_path class: 'btn' do
+  .post-button
+    投稿
