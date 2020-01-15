@@ -22,9 +22,9 @@
           .comments-icon
             %i.far.fa-comment
   .slick-area
-    .image-a
-    .image-b
-    .image-c
+    - @contents.each do |content|
+      .image-a
+        .landscape-image{style: "background-image: url(#{content.landscape_image})"}
   .random-image-area
     - @random.each do |content|
       = link_to content_path(content), class: "content-link2" do
