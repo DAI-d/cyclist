@@ -1,5 +1,7 @@
 class ContentsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new, :show, :create]
+
 def index
   @contents = Content.all
   @random = Content.order("RAND()").limit(4)
@@ -20,6 +22,7 @@ end
 
 def show
   @content = Content.find(params[:id])
+  @like = Like.new
 end
 
 private

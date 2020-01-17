@@ -1,7 +1,29 @@
 .mypage-header
   マイページ
 .mypage-main
-  = "ユーザー名：#{current_user.nickname}"
-  = link_to "ユーザー情報の編集", edit_user_path
-.toppage-button
-  = link_to "トップページへ", root_path
+  .user-profile
+    = "ユーザー名：#{@user.nickname}"
+    = link_to "ユーザー情報の編集", edit_user_path
+  %br
+  .user-contents
+    = "#{@user.nickname}さんの投稿一覧"
+    - @user.contents.each do |content|
+      .route-data-box
+        .route-data-box-upper
+          .route-name
+            = content.title
+          .route-place
+            = content.prefecture.name
+          = link_to content_path(content), class: "content-link" do
+            .route-image{style: "background-image: url(#{content.route_image})"}
+          .route-distance
+            = "走行距離#{content.distance}km"
+        .route-data-box-lower
+          .likes-icon
+            %i.far.fa-heart
+          .bookmark-icon
+            %i.far.fa-bookmark
+          .comments-icon
+            %i.far.fa-comment
+
+= link_to "トップページへ", root_path
