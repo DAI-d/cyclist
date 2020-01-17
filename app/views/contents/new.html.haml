@@ -1,45 +1,46 @@
-.posting-view-title
+.post-page-title
   投稿フォーム
-= form_for @content do |f|
-  .field
-    .field-label
-      タイトル
-    .field-input
-      = f.text_field :title, autofocus: true
-  .field
-    .field-label
-      県名
-    .field-input
-      = f.text_field :prefecture_id
-  .field
-    .field-label
-      風景画像
-    .field-input
-      = f.file_field :landscape_image
-  .field
-    .field-label
-      ルート画像
-    .field-input
-      = f.file_field :route_image
-  .field
-    .field-label
-      ルートURL
-    .field-input
-      = f.text_field :route_url
-  .field
-    .field-label
-      距離
-    .field-input
-      = f.text_field :distance
-  .field
-    .field-label
-      最大標高
-    .field-input
-      = f.text_field :max_elevation
-  .field
-    .field-label
-      獲得標高
-    .field-input
-      = f.text_field :total_elevation
-  .actions
-    = f.submit "投稿する", class: 'btn', type: 'submit'
+.post-page-main
+  = form_for @content do |f|
+    .field
+      .field-label
+        タイトル
+      .field-input
+        = f.text_field :title, autofocus: true
+    .field
+      .field-label
+        県名
+      .field-input
+        = f.text_field :prefecture_id
+    .field
+      .field-label
+        風景画像
+      .field-input
+        = f.file_field :landscape_image
+    .field
+      .field-label
+        ルート画像
+      .field-input
+        = f.file_field :route_image
+    .field
+      .field-label
+        ルートURL
+      .field-input
+        = f.text_field :route_url
+    .field
+      .field-label
+        距離
+      .field-input
+        = f.text_field :distance
+    .field
+      .field-label
+        最大標高
+      .field-input
+        = f.text_field :max_elevation
+    .field
+      .field-label
+        獲得標高
+      .field-input
+        = f.text_field :total_elevation
+    .actions
+      = f.submit "投稿する", class: 'btn', type: 'submit'
