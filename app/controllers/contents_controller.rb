@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
 
-  before_action :authenticate_user!, only: [:new, :show, :create]
+  before_action :authenticate_user!, only: [:new, :show, :create, :destroy]
 
 def index
   @contents = Content.all
@@ -23,6 +23,13 @@ end
 def show
   @content = Content.find(params[:id])
   @like = Like.new
+end
+
+def destroy
+  @content = Content.find(params[:id])
+  if @content.destroy
+    redirect_to root_path
+  end
 end
 
 private
