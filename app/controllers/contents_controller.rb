@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
 
-  before_action :authenticate_user!, only: [:new, :show, :create, :destroy]
+  before_action :authenticate_user!, only: [:new, :show, :create, :edit, :update, :destroy]
 
 def index
   @contents = Content.all
@@ -23,6 +23,16 @@ end
 def show
   @content = Content.find(params[:id])
   @like = Like.new
+end
+
+def edit
+end
+
+def update
+  if @content.user_id == current_user.id
+    @content.update(content_params)
+    redirect_to content_path(@content)
+  end
 end
 
 def destroy
