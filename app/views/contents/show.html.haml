@@ -26,7 +26,7 @@
 - @content.liked_users.each do |user|
   %li= user.nickname
 - if @content.user == current_user
-  = button_to 'この投稿を編集する', edit_content_path(@content), method: :edit
+  = button_to 'この投稿を編集する', edit_content_path(@content), method: :get
   = button_to 'この投稿を削除する', content_path(@content), method: :delete
 %br
 = link_to 'トップページへ', root_path
