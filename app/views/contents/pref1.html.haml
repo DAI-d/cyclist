@@ -1,3 +1,34 @@
 .pref1-main
   .title
     北海道のページ
+  .content-title
+    = "ルート名：#{@content.title}"
+  .content-prefecture
+    = "場所：#{@content.prefecture.name}"
+  .content-user
+    = "投稿者：#{@content.user.nickname}"
+  .content-distance
+    = "走行距離：#{@content.distance} km"
+  .content-max_elevation
+    = "最大標高：#{@content.max_elevation} m"
+  .content-total_elevation
+    = "獲得標高：#{@content.total_elevation} m"
+  .content-image{style: "background-image: url(#{@content.route_image})"}
+  .content-image{style: "background-image: url(#{@content.landscape_image})"}
+  .content-spot
+    休憩スポット
+    .content-spot-image
+  .likes-count
+    = "いいね件数：#{@content.likes.count}"
+  - if current_user.already_liked?(@content)
+    = button_to 'いいねを取り消す', content_like_path(@content), method: :delete
+  - else
+    = button_to 'いいね', content_likes_path(@content)
+  %h2 いいねしたユーザー
+  - @content.liked_users.each do |user|
+    %li= user.nickname
+  - if @content.user == current_user
+    = button_to 'この投稿を編集する', edit_content_path(@content), method: :get
+    = button_to 'この投稿を削除する', content_path(@content), method: :delete
+  %br
+  = link_to 'トップページへ', root_path
