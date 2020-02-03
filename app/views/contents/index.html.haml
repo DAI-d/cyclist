@@ -30,8 +30,6 @@
     - @random.each do |content|
       = link_to content_path(content), class: "content-link2" do
         .landscape-image{style: "background-image: url(#{content.landscape_image})"}
-  .map-area
-    #map
 = link_to new_content_path class: 'btn' do
   .post-button
     投稿
