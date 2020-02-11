@@ -3,11 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :contents, dependent: :destroy
+  has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :liked_contents, through: :likes, source: :content
-  def already_liked?(content)
-    self.likes.exists?(content_id: content.id)
+  has_many :liked_posts, through: :likes, source: :post
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
   end
   validates :nickname, uniqueness: true, presence: { message: 'を入力してください' }
 end
