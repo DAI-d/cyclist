@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'contents#index'
-  get 'contents/pref1'
-  get 'contents/pref2'
-  get 'contents/pref3'
-  get 'contents/pref4'
-  get 'contents/pref5'
+  root 'posts#index'
+  get 'posts/pref1'
+  get 'posts/pref2'
+  get 'posts/pref3'
+  get 'posts/pref4'
+  get 'posts/pref5'
   resources :users, only: [:edit, :update, :index, :show]
-  resources :contents do
+  resources :posts do
     resources :likes, only: [:create, :destroy]
   end
 end

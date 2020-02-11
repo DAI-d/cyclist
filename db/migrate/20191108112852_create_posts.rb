@@ -1,6 +1,6 @@
-class CreateContents < ActiveRecord::Migration[5.2]
+class CreatePosts < ActiveRecord::Migration[5.2]
   def change
-    create_table :contents do |t|
+    create_table :posts do |t|
       t.string :title, null: false
       t.references :prefecture, null: false, foregin_key: true
       t.references :user, null: false, foregin_key: true

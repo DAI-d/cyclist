@@ -39,7 +39,7 @@ $(function(){
   //         fontColor : "areaColor",
   //         fontShadowColor : "black",
   //         onSelect:function(data){
-  //             location.href = '/contents/pref'+ data.code; //各県のcode(1〜47)を指定してリンク
+  //             location.href = '/posts/pref'+ data.code; //各県のcode(1〜47)を指定してリンク
   //             // alert(data.name);
   //         },
   //     }
@@ -62,7 +62,7 @@ $(function(){
     movesIslands : true,
     fontSize : 11,
     onSelect : function(data){
-      location.href = '/contents/pref'+ data.area.code; //各地方のarea.code(1〜10)を指定してリンク
+      location.href = '/posts/pref'+ data.area.code; //各地方のarea.code(1〜10)を指定してリンク
     }
   });
 });

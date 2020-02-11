@@ -12,7 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2020_01_17_102154) do
 
-  create_table "contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.bigint "prefecture_id", null: false
     t.bigint "user_id", null: false
@@ -24,17 +33,8 @@ ActiveRecord::Schema.define(version: 2020_01_17_102154) do
     t.integer "total_elevation", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["prefecture_id"], name: "index_contents_on_prefecture_id"
-    t.index ["user_id"], name: "index_contents_on_user_id"
-  end
-
-  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "content_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["content_id"], name: "index_likes_on_content_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
+    t.index ["prefecture_id"], name: "index_posts_on_prefecture_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,6 +57,6 @@ ActiveRecord::Schema.define(version: 2020_01_17_102154) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "likes", "contents"
+  add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
 end

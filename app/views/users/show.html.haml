@@ -5,19 +5,19 @@
     = "ユーザー名：#{@user.nickname}"
     = link_to "ユーザー情報の編集", edit_user_path
   %br
-  .user-contents
+  .user-posts
     = "#{@user.nickname}さんの投稿一覧"
-    - @user.contents.each do |content|
+    - @user.posts.each do |post|
       .route-data-box
         .route-data-box-upper
           .route-name
-            = content.title
+            = post.title
           .route-place
-            = content.prefecture.name
-          = link_to content_path(content), class: "content-link" do
-            .route-image{style: "background-image: url(#{content.route_image})"}
+            = post.prefecture.name
+          = link_to post_path(post), class: "post-link" do
+            .route-image{style: "background-image: url(#{post.route_image})"}
           .route-distance
-            = "走行距離#{content.distance}km"
+            = "走行距離#{post.distance}km"
         .route-data-box-lower
           .likes-icon
             %i.far.fa-heart

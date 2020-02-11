@@ -90,12 +90,12 @@ body.fadeout::after { //jsでbodyにfadeoutクラスが付与されたら表示�
   flex-wrap: wrap;
 }
 
-.content-link2{
+.post-link2{
   width:50%;
 }
 
 @media screen and (max-width: 800px) {
-  .content-link2{
+  .post-link2{
     width: 100%; 
   }
 }
