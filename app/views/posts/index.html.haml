@@ -2,6 +2,12 @@
 .main
   .main-title
     %h2 投稿一覧
+  .search-form
+    = form_with url:'/posts', method: :get, local: true do |f|
+      = f.label :post_key, 'Sarch post'
+      = f.text_field :post_key
+      = f.submit 'Search'
+      = link_to 'Clear', posts_path
   .main-area
     - @posts.each do |post|
       .route-data-box

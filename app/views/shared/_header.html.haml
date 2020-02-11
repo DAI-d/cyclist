@@ -8,24 +8,20 @@
           .header-lower-menu
             .header-lower-text
               マイページ
-            %i.fas.fa-biking.fa-3x
     .header-lower-box
       - if user_signed_in?
-        = link_to new_post_path class: 'btn' do
+        = link_to root_path class: 'btn' do
           .header-lower-menu
             .header-lower-text
               投稿する
-            %i.fas.fa-biking.fa-3x
     .header-lower-box
       - unless user_signed_in?
         = link_to new_user_session_path do
           .header-lower-menu
             .header-lower-text
               ログイン
-            %i.fas.fa-biking.fa-3x
       - else
         = link_to destroy_user_session_path, method: :delete, class: 'btn' do
           .header-lower-menu
             .header-lower-text
               ログアウト
-            %i.fas.fa-biking.fa-3x

@@ -11,7 +11,7 @@
       .field-label
         県名
       .field-input
-        = f.text_field :prefecture_id
+        = f.select :prefecture_id, Prefecture.all.collect{|x|[x.name, x.id]}, prompt: "---"
     .field
       .field-label
         風景画像

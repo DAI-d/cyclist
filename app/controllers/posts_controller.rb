@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 def index
-  @posts = Post.all
+  if params[:post_key]
+    @posts = Post.where('title LIKE ?', "%#{params[:post_key]}%")
+  else
+    @posts = Post.all
+  end
   @random = Post.order("RAND()").limit(4)
 end
 
